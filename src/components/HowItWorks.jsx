@@ -62,27 +62,37 @@ const HowItWorks = () => {
 
                 <div style={timelineWrap}>
                     <div style={stepCard} className="fade-up">
+                        <div style={{ height: '180px', borderRadius: '8px', overflow: 'hidden', marginBottom: '25px' }}>
+                            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop" style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt="Consultation" />
+                        </div>
                         <div style={numberBox}>1</div>
                         <h3 style={stepTitle}>Tell Us About Your Event</h3>
-                        <p style={stepDesc}>Fill our quick form or call us. Takes 90 seconds.</p>
+                        <p style={stepDesc}>Fill our quick form or call us — it takes less than 90 seconds to start.</p>
                     </div>
                     <div style={{ ...stepCard, animationDelay: '0.1s' }} className="fade-up">
+                        <div style={{ height: '180px', borderRadius: '8px', overflow: 'hidden', marginBottom: '25px' }}>
+                            <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=2070&auto=format&fit=crop" style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt="Chef Team" />
+                        </div>
                         <div style={numberBox}>2</div>
                         <h3 style={stepTitle}>We Design Your Custom Menu</h3>
-                        <p style={stepDesc}>Our chef team creates a bespoke menu matched to your event theme and guest preferences.</p>
+                        <p style={stepDesc}>Our award-winning chefs create a bespoke menu tailored to your theme and unique preferences.</p>
                     </div>
                     <div style={{ ...stepCard, animationDelay: '0.2s' }} className="fade-up">
+                        <div style={{ height: '180px', borderRadius: '8px', overflow: 'hidden', marginBottom: '25px' }}>
+                            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=2069&auto=format&fit=crop" style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt="Tasting" />
+                        </div>
                         <div style={numberBox}>3</div>
                         <h3 style={stepTitle}>Taste Before You Commit</h3>
-                        <p style={stepDesc}>Book a complimentary food trial. No commitment required. Just extraordinary food.</p>
+                        <p style={stepDesc}>Experience the magic. Book a complimentary food trial with zero obligation — just great food.</p>
                     </div>
                     <div style={{ ...stepCard, animationDelay: '0.3s' }} className="fade-up">
+                        <div style={{ height: '180px', borderRadius: '8px', overflow: 'hidden', marginBottom: '25px' }}>
+                            <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=2069&auto=format&fit=crop" style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt="Event Execution" />
+                        </div>
                         <div style={numberBox}>4</div>
-                        <h3 style={stepTitle}>Relax. We Handle Everything.</h3>
-                        <p style={stepDesc}>Setup, service, live counters, cleanup — flawlessly executed while you enjoy your event.</p>
+                        <h3 style={stepTitle}>A Flawless Celebration</h3>
+                        <p style={stepDesc}>We handle everything — from setups to cleanup — while you celebrate with your guests.</p>
                     </div>
-
-                    <div style={{ position: 'absolute', top: '25px', left: '10%', right: '10%', height: '1px', backgroundColor: '#EDE8DF', zIndex: 0 }} className="timeline-line"></div>
                 </div>
 
                 <div style={{ marginTop: '80px' }}>

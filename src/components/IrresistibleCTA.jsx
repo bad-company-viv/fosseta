@@ -104,7 +104,7 @@ const IrresistibleCTA = () => {
                     </a>
                 </div>
 
-                <div style={badgesContainer} className="fade-up" style={{ animationDelay: '0.5s' }}>
+                <div style={{ ...badgesContainer, animationDelay: '0.5s' }} className="fade-up">
                     <div style={badgeItem}><span>🍽️</span> Custom tasting menu</div>
                     <div style={badgeItem}><span>👨‍🍳</span> Chef consultation</div>
                     <div style={badgeItem}><span>📋</span> Free event proposal</div>

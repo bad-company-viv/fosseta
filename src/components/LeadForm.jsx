@@ -165,6 +165,9 @@ const LeadForm = () => {
                                 </div>
                             </li>
                         </ul>
+                        <div style={{ marginTop: '40px', borderRadius: '12px', overflow: 'hidden', height: '240px' }}>
+                            <img src="https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=2070&auto=format&fit=crop" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.8 }} alt="Catering Excellence" />
+                        </div>
                     </div>
                 </div>
             </div>

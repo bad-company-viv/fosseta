@@ -11,6 +11,7 @@ import HowItWorks from './components/HowItWorks';
 import CuisineShowcase from './components/CuisineShowcase';
 import IrresistibleCTA from './components/IrresistibleCTA';
 import LeadForm from './components/LeadForm';
+import Stats from './components/Stats';
 import Footer from './components/Footer';
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
       <Services />
       <ChaatSpotlight />
       <SocialProof />
+      <Stats />
       <Gallery />
       <Team />
       <HowItWorks />

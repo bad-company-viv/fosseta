@@ -4,7 +4,7 @@ const PainPoints = () => {
     const sectionStyle = {
         padding: '120px 5%',
         backgroundColor: '#1A1208',
-        backgroundImage: 'linear-gradient(rgba(26, 18, 8, 0.95), rgba(26, 18, 8, 0.95)), url("https://images.unsplash.com/photo-1519096845289-9582736b6976?q=80&w=2070&auto=format&fit=crop")',
+        backgroundImage: 'linear-gradient(rgba(26, 18, 8, 0.95), rgba(26, 18, 8, 0.95)), url("/luxury_catering_bg.png")',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed',

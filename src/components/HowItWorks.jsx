@@ -63,7 +63,7 @@ const HowItWorks = () => {
                 <div style={timelineWrap}>
                     <div style={stepCard} className="fade-up">
                         <div style={{ height: '180px', borderRadius: '8px', overflow: 'hidden', marginBottom: '25px' }}>
-                            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop" style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt="Consultation" />
+                            <img src="/planning_session.png" style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt="Consultation" />
                         </div>
                         <div style={numberBox}>1</div>
                         <h3 style={stepTitle}>Tell Us About Your Event</h3>
@@ -71,7 +71,7 @@ const HowItWorks = () => {
                     </div>
                     <div style={{ ...stepCard, animationDelay: '0.1s' }} className="fade-up">
                         <div style={{ height: '180px', borderRadius: '8px', overflow: 'hidden', marginBottom: '25px' }}>
-                            <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=2070&auto=format&fit=crop" style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt="Chef Team" />
+                            <img src="/indian_buffet_luxury.png" style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt="Chef Team" />
                         </div>
                         <div style={numberBox}>2</div>
                         <h3 style={stepTitle}>We Design Your Custom Menu</h3>
@@ -79,7 +79,7 @@ const HowItWorks = () => {
                     </div>
                     <div style={{ ...stepCard, animationDelay: '0.2s' }} className="fade-up">
                         <div style={{ height: '180px', borderRadius: '8px', overflow: 'hidden', marginBottom: '25px' }}>
-                            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=2069&auto=format&fit=crop" style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt="Tasting" />
+                            <img src="/chaat_live.png" style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt="Tasting" />
                         </div>
                         <div style={numberBox}>3</div>
                         <h3 style={stepTitle}>Taste Before You Commit</h3>
@@ -87,7 +87,7 @@ const HowItWorks = () => {
                     </div>
                     <div style={{ ...stepCard, animationDelay: '0.3s' }} className="fade-up">
                         <div style={{ height: '180px', borderRadius: '8px', overflow: 'hidden', marginBottom: '25px' }}>
-                            <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=2069&auto=format&fit=crop" style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt="Event Execution" />
+                            <img src="/destination_wedding.png" style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt="Event Execution" />
                         </div>
                         <div style={numberBox}>4</div>
                         <h3 style={stepTitle}>A Flawless Celebration</h3>

@@ -1,6 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const LeadForm = () => {
+    const [formStatus, setFormStatus] = useState('idle'); // 'idle', 'submitting', 'success'
+    const [userName, setUserName] = useState('');
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setFormStatus('submitting');
+        
+        // Simulate premium processing delay
+        setTimeout(() => {
+            setFormStatus('success');
+            // Scroll to the top of the form section if needed
+            const section = document.getElementById('contact');
+            if (section) section.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 1800);
+    };
+
     const sectionStyle = {
         padding: '120px 5%',
         backgroundColor: '#FDFAF5',
@@ -74,69 +91,136 @@ const LeadForm = () => {
         <section id="contact" style={sectionStyle}>
             <div style={containerStyle}>
                 <div style={formWarp} className="fade-up">
-                    <h2 style={{ fontFamily: '"Playfair Display", serif', fontSize: '36px', marginBottom: '10px' }}>Plan Your Event With Fossetta</h2>
-                    <p style={{ color: '#8C7B6E', marginBottom: '40px' }}>Fill in the details and we'll get back within 2 hours.</p>
+                    <AnimatePresence mode="wait">
+                        {formStatus === 'success' ? (
+                            <motion.div 
+                                key="success"
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ duration: 0.5, ease: "easeOut" }}
+                                style={{ textAlign: 'center', padding: '40px 0' }}
+                            >
+                                <div style={{ 
+                                    width: '80px', 
+                                    height: '80px', 
+                                    backgroundColor: '#F4ECD8', 
+                                    borderRadius: '50%', 
+                                    display: 'flex', 
+                                    alignItems: 'center', 
+                                    justifyContent: 'center', 
+                                    margin: '0 auto 30px',
+                                    color: '#C9A84C',
+                                    fontSize: '40px'
+                                }}>
+                                    ✓
+                                </div>
+                                <h2 style={{ fontFamily: '"Playfair Display", serif', fontSize: '36px', marginBottom: '15px', color: '#1A1208' }}>
+                                    Experience Fossetta Soon
+                                </h2>
+                                <p style={{ color: '#4A3F35', fontSize: '18px', lineHeight: 1.6, maxWidth: '400px', margin: '0 auto 40px' }}>
+                                    Thank you, {userName || 'there'}! Your request has been received. Our event specialist will reach out within the next 2 hours.
+                                </p>
+                                <button 
+                                    onClick={() => setFormStatus('idle')}
+                                    className="cta-outline"
+                                    style={{ border: '1px solid #C9A84C', color: '#C9A84C', padding: '12px 30px' }}
+                                >
+                                    Back to Form
+                                </button>
+                            </motion.div>
+                        ) : (
+                            <motion.div 
+                                key="form"
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                            >
+                                <h2 style={{ fontFamily: '"Playfair Display", serif', fontSize: '36px', marginBottom: '10px' }}>Plan Your Event With Fossetta</h2>
+                                <p style={{ color: '#8C7B6E', marginBottom: '40px' }}>Fill in the details and we'll get back within 2 hours.</p>
 
-                    <form>
-                        <div style={inputGroup}>
-                            <label style={labelStyle}>Your Full Name</label>
-                            <input type="text" placeholder="e.g. Rahul Sharma" style={inputStyle} required />
-                        </div>
-                        
-                        <div style={gridInputs}>
-                            <div style={inputGroup}>
-                                <label style={labelStyle}>Phone Number</label>
-                                <input type="tel" placeholder="+91 00000 00000" style={inputStyle} required />
-                            </div>
-                            <div style={inputGroup}>
-                                <label style={labelStyle}>Email Address</label>
-                                <input type="email" placeholder="rahul@company.com" style={inputStyle} required />
-                            </div>
-                        </div>
+                                <form onSubmit={handleSubmit}>
+                                    <div style={inputGroup}>
+                                        <label style={labelStyle}>Your Full Name</label>
+                                        <input 
+                                            type="text" 
+                                            placeholder="e.g. Rahul Sharma" 
+                                            style={inputStyle} 
+                                            required 
+                                            value={userName}
+                                            onChange={(e) => setUserName(e.target.value)}
+                                        />
+                                    </div>
+                                    
+                                    <div style={gridInputs}>
+                                        <div style={inputGroup}>
+                                            <label style={labelStyle}>Phone Number</label>
+                                            <input type="tel" placeholder="+91 00000 00000" style={inputStyle} required />
+                                        </div>
+                                        <div style={inputGroup}>
+                                            <label style={labelStyle}>Email Address</label>
+                                            <input type="email" placeholder="rahul@company.com" style={inputStyle} required />
+                                        </div>
+                                    </div>
 
-                        <div style={gridInputs}>
-                            <div style={inputGroup}>
-                                <label style={labelStyle}>Event Type</label>
-                                <select style={selectStyle}>
-                                    <option>Wedding</option>
-                                    <option>Corporate Event</option>
-                                    <option>Private Party</option>
-                                    <option>Celebrity Event</option>
-                                    <option>Sports/Family Day</option>
-                                    <option>Other</option>
-                                </select>
-                            </div>
-                            <div style={inputGroup}>
-                                <label style={labelStyle}>Expected Guest Count</label>
-                                <select style={selectStyle}>
-                                    <option>Under 50</option>
-                                    <option>50–150</option>
-                                    <option>150–500</option>
-                                    <option>500–1000</option>
-                                    <option>1000+</option>
-                                </select>
-                            </div>
-                        </div>
+                                    <div style={gridInputs}>
+                                        <div style={inputGroup}>
+                                            <label style={labelStyle}>Event Type</label>
+                                            <select style={selectStyle}>
+                                                <option>Wedding</option>
+                                                <option>Corporate Event</option>
+                                                <option>Private Party</option>
+                                                <option>Celebrity Event</option>
+                                                <option>Sports/Family Day</option>
+                                                <option>Other</option>
+                                            </select>
+                                        </div>
+                                        <div style={inputGroup}>
+                                            <label style={labelStyle}>Expected Guest Count</label>
+                                            <select style={selectStyle}>
+                                                <option>Under 50</option>
+                                                <option>50–150</option>
+                                                <option>150–500</option>
+                                                <option>500–1000</option>
+                                                <option>1000+</option>
+                                            </select>
+                                        </div>
+                                    </div>
 
-                        <div style={inputGroup}>
-                            <label style={labelStyle}>Venue / City</label>
-                            <input type="text" placeholder="e.g. Le Meridien, Gurgaon" style={inputStyle} />
-                        </div>
+                                    <div style={inputGroup}>
+                                        <label style={labelStyle}>Venue / City</label>
+                                        <input type="text" placeholder="e.g. Le Meridien, Gurgaon" style={inputStyle} />
+                                    </div>
 
-                        <div style={inputGroup}>
-                            <label style={labelStyle}>Tell us about your event (optional)</label>
-                            <textarea placeholder="Any special requests or details..." style={{ ...inputStyle, minHeight: '120px', resize: 'vertical' }}></textarea>
-                        </div>
+                                    <div style={inputGroup}>
+                                        <label style={labelStyle}>Tell us about your event (optional)</label>
+                                        <textarea placeholder="Any special requests or details..." style={{ ...inputStyle, minHeight: '120px', resize: 'vertical' }}></textarea>
+                                    </div>
 
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', margin: '10px 0 30px' }}>
-                            <input type="checkbox" id="chaat" defaultChecked style={{ width: '18px', height: '18px', cursor: 'pointer' }} />
-                            <label htmlFor="chaat" style={{ fontSize: '14px', color: '#4A3F35', cursor: 'pointer' }}>Add The Chaat Concept? (Recommended)</label>
-                        </div>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px', margin: '10px 0 30px' }}>
+                                        <input type="checkbox" id="chaat" defaultChecked style={{ width: '18px', height: '18px', cursor: 'pointer' }} />
+                                        <label htmlFor="chaat" style={{ fontSize: '14px', color: '#4A3F35', cursor: 'pointer' }}>Add The Chaat Concept? (Recommended)</label>
+                                    </div>
 
-                        <button className="cta-primary" style={{ width: '100%', border: 'none', color: '#FFFFFF', cursor: 'pointer', justifyCenter: 'center', padding: '20px' }}>
-                            Get My Free Quote & Food Trial Slot
-                        </button>
-                    </form>
+                                    <button 
+                                        type="submit"
+                                        className="cta-primary" 
+                                        style={{ 
+                                            width: '100%', 
+                                            border: 'none', 
+                                            color: '#FFFFFF', 
+                                            cursor: 'pointer', 
+                                            justifyCenter: 'center', 
+                                            padding: '20px',
+                                            opacity: formStatus === 'submitting' ? 0.7 : 1,
+                                            pointerEvents: formStatus === 'submitting' ? 'none' : 'auto'
+                                        }}
+                                    >
+                                        {formStatus === 'submitting' ? 'Processing Your Request...' : 'Get My Free Quote & Food Trial Slot'}
+                                    </button>
+                                </form>
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
                 </div>
 
                 <div style={{ ...trustPanel, animationDelay: '0.2s' }} className="fade-up">
@@ -166,7 +250,7 @@ const LeadForm = () => {
                             </li>
                         </ul>
                         <div style={{ marginTop: '40px', borderRadius: '12px', overflow: 'hidden', height: '240px' }}>
-                            <img src="https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=2070&auto=format&fit=crop" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.8 }} alt="Catering Excellence" />
+                            <img src="/corporate_catering.png" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.8 }} alt="Catering Excellence" />
                         </div>
                     </div>
                 </div>

@@ -47,17 +47,17 @@ const Team = () => {
         {
             name: "Chef Vikram Sethi",
             role: "Executive Head Chef",
-            img: "https://images.unsplash.com/photo-1581299894007-aaa50297cf16?q=80&w=1974&auto=format&fit=crop"
+            img: "/chef_vikram.png"
         },
         {
             name: "Chef Anjali Rao",
             role: "Pastry & Dessert Specialist",
-            img: "https://images.unsplash.com/photo-1577219491135-ce391730fb2c?q=80&w=1954&auto=format&fit=crop"
+            img: "https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=2070&auto=format&fit=crop"
         },
         {
             name: "The Chaat Masters",
             role: "Signature Live Counter Team",
-            img: "https://images.unsplash.com/photo-1606131731446-45685ba44d8b?q=80&w=1974&auto=format&fit=crop"
+            img: "https://images.unsplash.com/photo-1610192244261-3f33de3f55e4?q=80&w=2070&auto=format&fit=crop"
         }
     ];
 

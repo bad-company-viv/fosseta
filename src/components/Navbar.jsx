@@ -22,8 +22,11 @@ const Navbar = () => {
         zIndex: 1000,
         width: '100%',
         padding: scrolled ? '15px 5%' : '25px 5%',
-        backgroundColor: scrolled ? '#FDFAF5' : 'transparent',
-        boxShadow: scrolled ? '0 4px 30px rgba(0,0,0,0.05)' : 'none',
+        backgroundColor: scrolled ? 'rgba(26, 18, 8, 0.98)' : 'rgba(26, 18, 8, 0.9)',
+        backdropFilter: 'blur(15px)',
+        WebkitBackdropFilter: 'blur(15px)',
+        borderBottom: scrolled ? '1px solid rgba(201, 168, 76, 0.15)' : '1px solid transparent',
+        boxShadow: scrolled ? '0 10px 40px rgba(0,0,0,0.3)' : 'none',
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
@@ -40,11 +43,6 @@ const Navbar = () => {
         alignItems: 'center',
     };
 
-    const dotStyle = {
-        color: '#C9A84C',
-        marginLeft: '2px',
-    };
-
     const linkContainerStyle = {
         display: 'flex',
         gap: '40px',
@@ -53,10 +51,12 @@ const Navbar = () => {
 
     const linkStyle = {
         fontSize: '14px',
-        fontWeight: 500,
-        color: '#1A1208',
+        fontWeight: 600,
+        color: '#FFFFFF',
         textTransform: 'uppercase',
-        letterSpacing: '1px',
+        letterSpacing: '1.5px',
+        opacity: 0.85,
+        transition: 'opacity 0.3s ease',
     };
 
     const ctaStyle = {
@@ -73,16 +73,20 @@ const Navbar = () => {
     return (
         <nav style={navbarStyle}>
             <div style={logoStyle}>
-                Fossetta<span style={dotStyle}>.</span>
+                <img src="/logo.png" alt="Fossetta Logo" style={{ height: '40px', objectFit: 'contain' }} />
             </div>
             <div style={linkContainerStyle} className="nav-links">
-                <a href="#services" style={linkStyle}>Our Services</a>
-                <a href="#why-fossetta" style={linkStyle}>Why Fossetta</a>
-                <a href="#clients" style={linkStyle}>Clients</a>
+                <a href="#services" style={linkStyle} className="nav-link">Our Services</a>
+                <a href="#why-fossetta" style={linkStyle} className="nav-link">Why Fossetta</a>
+                <a href="#clients" style={linkStyle} className="nav-link">Clients</a>
                 <a href="#contact" style={ctaStyle}>Book Food Trial</a>
             </div>
             <style>
                 {`
+                    .nav-link:hover {
+                        opacity: 1 !important;
+                        color: #C9A84C !important;
+                    }
                     @media (max-width: 768px) {
                         .nav-links {
                             display: none !important;

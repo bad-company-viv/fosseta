@@ -99,10 +99,8 @@ const ChaatSpotlight = () => {
 
                 <div style={rightCol} className="fade-up">
                     <div className="placeholder-gradient" style={{ minHeight: '550px', transform: 'rotate(-2deg)', borderRadius: '24px', position: 'relative', zIndex: 1, overflow: 'hidden' }}>
-                         <img src="https://images.unsplash.com/photo-1601050690597-df056ec5605d?q=80&w=2070&auto=format&fit=crop" alt="Signature Chaat Concept" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                         <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'rgba(0,0,0,0.3)', flexDirection: 'column' }}>
-                            <span style={{ fontFamily: '"Playfair Display", serif', fontSize: '24px', color: '#FFFFFF' }}>[The Chaat Concept]</span>
-                         </div>
+                         <img src="/chaat_live.png" alt="Signature Chaat Concept" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+
                     </div>
                 </div>
             </div>

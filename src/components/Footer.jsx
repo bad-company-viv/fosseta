@@ -5,10 +5,10 @@ const Footer = () => {
         <footer style={{ backgroundColor: '#1A1208', color: '#8C7B6E', padding: '100px 5% 60px', fontSize: '14px', position: 'relative' }}>
             <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '60px' }}>
                 <div className="fade-up">
-                    <h3 style={{ color: '#FFFFFF', marginBottom: '25px', fontFamily: '"Playfair Display", serif', fontSize: '24px' }}>Fossetta<span style={{ color: '#C9A84C' }}>.</span></h3>
+                    <img src="/logo.png" alt="Fossetta Logo" style={{ height: '50px', objectFit: 'contain', marginBottom: '25px' }} />
                     <p style={{ lineHeight: 1.8 }}>Gurgaon's most awarded gourmet caterers. <br /> Where taste meets presentation.</p>
                 </div>
-                
+
                 <div className="fade-up" style={{ animationDelay: '0.1s' }}>
                     <h4 style={{ color: '#FFFFFF', marginBottom: '20px', textTransform: 'uppercase', letterSpacing: '2px', fontSize: '13px' }}>Quick Navigation</h4>
                     <ul style={{ display: 'flex', flexDirection: 'column', gap: '12px', listStyle: 'none', padding: 0 }}>
@@ -38,17 +38,36 @@ const Footer = () => {
                 </div>
             </div>
 
-            <div style={{ marginTop: '100px', paddingTop: '40px', borderTop: '1px solid rgba(255,255,255,0.05)', textAlign: 'center' }}>
-                <p style={{ fontSize: '12px', marginBottom: '30px' }}>&copy; {new Date().getFullYear()} Fossetta Gourmet Catering. All rights reserved.</p>
-                
+            <div style={{
+                marginTop: '100px',
+                paddingTop: '40px',
+                borderTop: '1px solid rgba(255,255,255,0.05)',
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                flexWrap: 'wrap',
+                gap: '20px'
+            }} className="footer-bottom">
+                <p style={{ fontSize: '12px', margin: 0 }}>&copy; {new Date().getFullYear()} Fossetta Gourmet Catering. All rights reserved.</p>
+
                 {/* BOTTOM SITE CREDITS PILL (AS REQUESTED) */}
-                <div style={{ display: 'inline-flex', alignItems: 'center', backgroundColor: '#000000', padding: '10px 25px', borderRadius: '100px', border: '1px solid rgba(255,255,255,0.1)', gap: '20px' }} className="fade-up">
-                    <a href="https://fabulousmedia.in" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center' }}>
-                        <img src="/sitecredits/fabulous.png" alt="Fabulous Media" style={{ height: '24px', objectFit: 'contain' }} />
+                <div style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                    backdropFilter: 'blur(10px)',
+                    WebkitBackdropFilter: 'blur(10px)',
+                    padding: '8px 20px',
+                    borderRadius: '100px',
+                    border: '1px solid rgba(255,255,255,0.1)',
+                    gap: '15px'
+                }} className="fade-up">
+                    <a href="https://fabulousmedia.in" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', opacity: 0.8, transition: 'opacity 0.3s' }} className="credit-link">
+                        <img src="/sitecredits/fabulous.png" alt="Fabulous Media" style={{ height: '18px', objectFit: 'contain' }} />
                     </a>
-                    <div style={{ width: '1px', height: '24px', backgroundColor: 'rgba(255,255,255,0.2)' }}></div>
-                    <a href="https://gocommercially.com" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center' }}>
-                        <img src="/sitecredits/gocomercially.svg" alt="Go Commercially" style={{ height: '20px', objectFit: 'contain' }} />
+                    <div style={{ width: '1px', height: '16px', backgroundColor: 'rgba(255,255,255,0.15)' }}></div>
+                    <a href="https://gocommercially.com" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', opacity: 0.8, transition: 'opacity 0.3s' }} className="credit-link">
+                        <img src="/sitecredits/gocomercially.svg" alt="Go Commercially" style={{ height: '16px', objectFit: 'contain' }} />
                     </a>
                 </div>
             </div>
@@ -57,6 +76,14 @@ const Footer = () => {
                 {`
                     .footer-link { color: #8C7B6E; text-decoration: none; transition: 0.3s; }
                     .footer-link:hover { color: #C9A84C; }
+                    .credit-link:hover { opacity: 1 !important; }
+                    @media (max-width: 768px) {
+                        .footer-bottom { 
+                            flex-direction: column !important; 
+                            text-align: center !important;
+                            justify-content: center !important;
+                        }
+                    }
                     @media (max-width: 600px) {
                         footer { padding: 60px 5% !important; }
                         .container { gap: 40px !important; }

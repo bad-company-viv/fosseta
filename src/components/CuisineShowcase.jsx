@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const CuisineShowcase = () => {
     const sectionStyle = {
@@ -57,25 +58,25 @@ const CuisineShowcase = () => {
         {
             name: "Indian Feast",
             items: "Dal Makhani, Dum Biryani, Live Tandoor",
-            img: "https://images.unsplash.com/photo-1585937421612-70a008356fbe?q=80&w=2072&auto=format&fit=crop",
+            img: "/indian_buffet_luxury.png",
             icon: "🥘"
         },
         {
             name: "Pan-Asian Fusion",
             items: "Dim Sum, Thai Curries, Japanese stations",
-            img: "https://images.unsplash.com/photo-1540648639573-8c848de23f0a?q=80&w=1984&auto=format&fit=crop",
+            img: "/pan_asian.png",
             icon: "🥢"
         },
         {
             name: "The Chaat Concept",
             items: "Pani Puri, Dahi Bhalla, Aloo Tikki",
-            img: "https://images.unsplash.com/photo-1601050690597-df056ec5605d?q=80&w=2070&auto=format&fit=crop",
+            img: "/the_chaat_concept.png",
             icon: "🍲"
         },
         {
             name: "Gourmet Continental",
             items: "Risotto stations, carved meats, artisan desserts",
-            img: "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=2069&auto=format&fit=crop",
+            img: "/continental.png",
             icon: "🥗"
         }
     ];
@@ -87,12 +88,23 @@ const CuisineShowcase = () => {
                 <h2 style={{ fontFamily: '"Playfair Display", serif', fontSize: '48px', marginTop: '15px' }}>Every Dish is a Masterpiece</h2>
                 <div style={gridStyle}>
                     {cuisines.map((cuisine, i) => (
-                        <div key={cuisine.name} style={{ ...cuisineCard, backgroundImage: `url(${cuisine.img})`, animationDelay: `${i * 0.1}s` }} className="fade-up">
+                        <motion.div 
+                            key={cuisine.name} 
+                            whileHover={{ scale: 1.02, y: -10 }}
+                            transition={{ duration: 0.4, ease: "easeOut" }}
+                            style={{ 
+                                ...cuisineCard, 
+                                backgroundImage: `url(${cuisine.img})`, 
+                                animationDelay: `${i * 0.1}s`,
+                                cursor: 'pointer'
+                            }} 
+                            className="fade-up"
+                        >
                             <div style={overlay}></div>
                             <span style={{ fontSize: '40px', position: 'relative', zIndex: 2, marginBottom: '20px' }}>{cuisine.icon}</span>
                             <h3 style={titleStyle}>{cuisine.name}</h3>
                             <p style={descStyle}>{cuisine.items}</p>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
                 <div style={{ marginTop: '60px' }}>

@@ -26,14 +26,14 @@ const Gallery = () => {
     };
 
     const images = [
-        "https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=2070&auto=format&fit=crop", // Wedding table
-        "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?q=80&w=2069&auto=format&fit=crop", // Event decor
-        "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?q=80&w=2069&auto=format&fit=crop", // Luxury catering
-        "https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=2070&auto=format&fit=crop", // Food display
-        "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=2070&auto=format&fit=crop", // Gourmet plate
-        "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=2070&auto=format&fit=crop", // High-end buffet
-        "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=2070&auto=format&fit=crop", // Chef plating
-        "https://images.unsplash.com/photo-1530101978243-209a8a5f6da9?q=80&w=2070&auto=format&fit=crop"  // Party vibes
+        "/destination_wedding.png",
+        "/luxury_catering_bg.png",
+        "/private_luxury_events.png",
+        "/corporate_catering.png",
+        "/indian_buffet_luxury.png",
+        "/gourmet_dessert_display.png",
+        "/hero_catering_luxury_food.png",
+        "/the_chaat_concept.png"
     ];
 
     return (
